@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>À propos de moi</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <center><h1>Bienvenue sur ma page personnelle</h1>
+  <audio id="musique" autoplay loop>
+  <source src="Cantina Band.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="toggleMusic()">⏯️ Play / Pause</button>
+
+<script>
+  const audio = document.getElementById("musique");
+
+  function toggleMusic() {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }
+</script>
+
+
+<script>
+  let hasPlayed = false;
+
+  document.addEventListener("click", function () {
+    if (!hasPlayed) {
+      document.getElementById("musique").play();
+      hasPlayed = true;
+    }
+  });
+</script>
+
+  <h2>😎 Qui suis-je ?</h2>
+  <p>Je m'appelle Alessio, je suis un jeune homme avec un <b>destin exceptionnel</b>.</p> <img src="Alessios.jpg" alt="Moi" width="400">
+<h2>Les choses à savoir sur moi :</h2>
+<nav>
+  <ul class="menu">
+    <li><a href="activités.html">Activités</a></li>
+    <li><a href="passions.html">Passions</a></li>
+    <li><a href="valeurs.html">Valeurs</a></li>
+  </ul>
+</nav>
+
+  <h2>📸 Ma pose</h2>
+  <a href="pose.html"><img src="ImperiusAless.jpg" alt="Ma Pose" width="200"></a>
+
+  <h2>🔗 Me retrouver</h2>
+  <nav>
+  <ul class="menu">
+    <li><a href="https://www.instagram.com/sono_aless_11/" target="_blank">Mon Instagram</a></li>
+  </ul>
+</nav></center>
+</body>
+</html>

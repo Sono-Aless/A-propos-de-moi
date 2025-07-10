@@ -1,0 +1,32 @@
+body {
+	background-image : url("Background2.jpg");
+	
+	h1{color: #FFFF00;
+font-size:50px;
+}
+h2 { color : #FFFF00 ;
+font-size: 30px;
+}
+p {
+	color : #FFFF00;
+	font-size : 18px;
+}
+ul{ color : #523094;
+font-size : 18px;
+}
+h3 { color : #FFFF00
+}
+.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.menu a { color: #FFD700; text-decoration: none; }
+.menu a:hover { text-decoration: underline; }
+
+main {
+  max-width: 800px;
+  margin: auto;  /* centre horizontalement */
+}

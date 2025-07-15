@@ -4,45 +4,69 @@
   <meta charset="UTF-8">
   <title>À propos de moi</title>
   <link href="style.css" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/star-wars" rel="stylesheet">
 </head>
 <body>
-  <center><h1>Bienvenue sur ma page personnelle</h1>
-  <audio id="musique" autoplay loop>
-  <source src="Cantina Band.mp3" type="audio/mpeg">
+<main>
+<h1>Bienvenue sur ma page personnelle</h1>
+
+<div class="crawl-container">
+  <div class="crawl">
+  <h1 class="titre">Alessio Rogerie</h1>
+  <div class="texte">
+   <p class="bloc">Alessio vous a permis d'acceder a cette page car vous le meritez. Mais qui est-il ? 
+   C'est ce que vous allez decouvrir en naviguant dans sa galaxie lointaine, tres lointaine, son monde incroyable, son univers cinematographique et autre.</p>
+   <p class="bloc">Vous allez donc decouvrir tout ce qui est important afin de le connaitre. 
+   En commenceant par ses activites, ses passions, ses valeurs, 
+   en passant par ses oeuvres preferees, ses petits et grands details qui valent bien le cout d'y passer.</p>
+   <p class="bloc">Alessio espere qu'apres votre aventure a travers ce site, 
+   vous le connaissiez assez afin d'etablir une relation de confiance. N'hesitez pas a lui parler si besoin de plus d'informations a propos de lui.
+   <br>Que la Force soit avec vous...</br></p>
+   </div>
+</div>
+</div>
+
+<audio id="introSound">
+  <source src="intro-starwars.mp3" type="audio/mpeg">
 </audio>
 
-<button onclick="toggleMusic()">⏯️ Play / Pause</button>
-
 <script>
-  const audio = document.getElementById("musique");
-
-  function toggleMusic() {
-    if (audio.paused) {
-      audio.play();
-    } else {
-      audio.pause();
-    }
-  }
-</script>
-
-
-<script>
-  let hasPlayed = false;
-
-  document.addEventListener("click", function () {
-    if (!hasPlayed) {
-      document.getElementById("musique").play();
-      hasPlayed = true;
-    }
+  window.addEventListener("load", () => {
+    const intro = document.getElementById("introSound");
+    intro.volume = 0.6;
+    intro.play().catch(() => {
+      // Certains navigateurs bloquent l'autoplay, le play sera relancé au clic.
+    });
+    
+    document.addEventListener("click", () => {
+      if (intro.paused) intro.play();
+    });
   });
-</script>
+  function activerSabre() {
+  const son = document.getElementById("sabreSound");
+  son.currentTime = 0;
+  son.play();
 
+  const btn = document.getElementById("sabreButton");
+  btn.classList.add("sabre-glow");
+
+  setTimeout(() => {
+    btn.classList.remove("sabre-glow");
+  }, 1000);
+}
+
+</script>
+<main><button id="sabreButton" onclick="activerSabre()">⚡ Allumer le sabre</button></main>
+<audio id="sabreSound">
+  <source src="saber-on.mp3" type="audio/mpeg">
+</audio>
   <h2>😎 Qui suis-je ?</h2>
-  <p>Je m'appelle Alessio, je suis un jeune homme avec un <b>destin exceptionnel</b>.</p> <img src="Alessios.jpg" alt="Moi" width="400">
+  <p>Je m'appelle Alessio, je suis un jeune homme avec un <b>destin exceptionnel</b>. </p> <img src="Alessios.jpg" alt="Moi" width="400" class="glow-border">
+
 <h2>Les choses à savoir sur moi :</h2>
 <nav>
   <ul class="menu">
-    <li><a href="Activités.html">Activités</a></li>
+    <li><a href="activités.html">Activités</a></li>
     <li><a href="passions.html">Passions</a></li>
     <li><a href="valeurs.html">Valeurs</a></li>
   </ul>
@@ -54,8 +78,8 @@
   <h2>🔗 Me retrouver</h2>
   <nav>
   <ul class="menu">
-    <li><a href="https://www.instagram.com/sono_aless_11/" target="_blank">Mon Instagram</a></li>
+    <li><a href="https://www.instagram.com/alessio_rogerie/" target="_blank">Mon Instagram</a></li>
   </ul>
-</nav></center>
+</nav></main>
 </body>
 </html>
